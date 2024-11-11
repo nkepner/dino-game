@@ -130,7 +130,7 @@ function update() {
     gameOver();
     console.log("col detected");
   }
-  //speedUp(score);
+  speedUp(score);
   // Draw game objects
   console.log("drawing Game Objects");
   drawDino();
