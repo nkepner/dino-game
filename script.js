@@ -139,13 +139,14 @@ function update() {
   drawBird();
   drawRock();
 }
-/*function speedUp(score) {
-  while (score >= 1) {
-    rock.speed = rock.speed + score;
-    bird.speed = bird.speed + score;
-    cactus.speed = cactus.speed + score;
+function speedUp(score) {
+  if (score >= 1) {
+    rock.speed = rock.speed + score / 5;
+    bird.speed = bird.speed + score / 5;
+    cactus.speed = cactus.speed + score / 5;
   }
-}*/
+}
+
 function gameOver() {
   cancelAnimationFrame(gameLoop);
   ctx.fillStyle = "black";
@@ -173,6 +174,9 @@ function startGame() {
   cactus.x = canvas.width;
   bird.x = canvas.width;
   rock.x = canvas.width;
+  bird.speed = 5
+  cactus.speed = 4
+  rock.speed = 2
   gameLoopFunction();
 }
 // Event listeners
